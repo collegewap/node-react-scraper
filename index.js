@@ -6,6 +6,7 @@ puppeteer
   .then(async (browser) => {
     const page = await browser.newPage();
     await page.goto("https://cra-crawl.vercel.app/");
+    //Wait for the page to be loaded
     await page.waitForSelector(".fruits-list");
 
     let heading = await page.evaluate(() => {
